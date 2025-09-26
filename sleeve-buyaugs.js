@@ -1,10 +1,11 @@
 /** @param {NS} ns **/
 
+// PURCHASE ALL AUGMENTATIONS for SLEEVES
 export async function main(ns) {
 	//while (true) {
 		let doing = 0;
 		for (let i = 0; i < ns.sleeve.getNumSleeves(); i++) {
-			let stat = ns.sleeve.getSleeveStats(i);
+			let stat = ns.sleeve.getSleeve(i);
 
 			let auglist = "";
 			if (stat.shock > 0) {
