@@ -8,6 +8,8 @@ export async function main(ns) {
 		[target]		Target for hacking scripts\n\
 		[-s server]		Single server on which to install batch scripts\n";
 
+	// NEED TO buy-servers.js FIRST
+	// TODO - modify so that /home server is used as controller site
 
 	var exclude = "";
 	var includeonly = "";
