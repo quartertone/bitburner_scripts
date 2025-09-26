@@ -74,9 +74,10 @@ export async function main(ns) {
 		"wipeserver.js",
 
 	];
-	var prepend = "https://bitbucket.org/quartertone/scripts/raw/";
+
+	var prepend = "https://github.com/quartertone/bitburner_scripts/raw/refs/heads/";
 	
-	var version = "10d17ec5ab78353ef7ed6743bc65ca7fdcde7561/";
+	var version = "main/";
 	for (const file of files) {
 		let gotit = ns.wget(prepend + version + file, file);
 		await gotit.then(
