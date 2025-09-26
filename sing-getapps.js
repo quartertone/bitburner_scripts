@@ -32,7 +32,7 @@ export async function main(ns) {
 		if (ns.singularity.purchaseProgram(app)) {
 			appcount++;
 			ns.tprint(appcount + " " + app + " " + ns.singularity.getDarkwebProgramCost(app));
-			ns.exec(settings.scanhosts, "home", 1); // "n00dles",
+			ns.exec(settings.primary.scanhosts, "home", 1); // "n00dles",
 		}
 /*
 		for (const fac of factions) {

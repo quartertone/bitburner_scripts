@@ -1,4 +1,7 @@
 /** @param {NS} ns **/
+// endgame start script
+
+import { settings } from "/settings.js";
 
 export async function main(ns) {
 
@@ -6,7 +9,7 @@ export async function main(ns) {
 
 		if (ns.singularity.getOwnedAugmentations(true).includes("The Red Pill")) {
 			ns.tprint("Red Pill already owned");
-			ns.rm("runfile-buy-betterstocks.js.txt", "home");
+			ns.rm(settings.tix.runfile, "home");
 			break;
 		} else {
 
@@ -17,7 +20,7 @@ export async function main(ns) {
 			if (rep > redrep) {
 				if (ns.singularity.purchaseAugmentation("Daedalus", "The Red Pill")) {
 					ns.alert("Red Pill obtained");
-					ns.rm("runfile-buy-betterstocks.js.txt", "home");
+					ns.rm(settings.tix.runfile, "home");
 					// wait for stocks to be all sold
 					// continued in next while-true
 					break;
@@ -57,7 +60,7 @@ export async function main(ns) {
 	// Buy all sleeve augs
 	// 
 	// spend money on Level upgrades
-	ns.singularity.installAugmentations("singularity.js");
+	ns.singularity.installAugmentations(settings.end.singularity);
 
 	// done
 

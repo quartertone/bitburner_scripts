@@ -132,10 +132,10 @@ export async function main(ns) {
 
 	/*
 		async function installhack(server, target, indentcount = 1) {
-			//let installscript = "installhack.js";
+			//let installscript = "installhack.j s";
 			let freeram = ns.getServerMaxRam("home") - ns.getServerUsedRam("home");
-			let scriptram = ns.getScriptRam(settings.loopinstall, "home");
-			while (ns.scriptRunning(settings.loopinstall, "home") && freeram < scriptram) {
+			let scriptram = ns.getScriptRam(settings.primary.loopinstall, "home");
+			while (ns.scriptRunning(settings.primary.loopinstall, "home") && freeram < scriptram) {
 				//hang on a minute if we're temp out of ram
 				await ns.sleep(500);
 			}
@@ -145,7 +145,7 @@ export async function main(ns) {
 				if (verbose) args.push("-v");
 				if (silent) args.push("-q");
 				//ns.tprint(args);
-				ns.exec(settings.loopinstall, "home", 1, ...args);
+				ns.exec(settings.primary.loopinstall, "home", 1, ...args);
 				//ns.tprint("installhack " + server);
 				await ns.sleep(100);
 			} catch (e) { ns.tprint("Installhack error: " + e); }

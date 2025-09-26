@@ -1,8 +1,7 @@
 /** @param {NS} ns **/
 //SOLID
-import { panelbox, havebox, gettime } from "settings.js";
-import { terminalcommand } from "settings.js";
-
+import { terminalcommand, panelbox, havebox, gettime } from "settings.js";
+// import { terminalcommand } from "settings.js";
 
 export async function main(ns) {
 	var box = true;
@@ -77,7 +76,7 @@ export async function main(ns) {
 		var stockinfobtn = document.createElement("button");
 		stockinfobtn.innerHTML = "Stocks info(t)";
 		stockinfobtn.addEventListener("click", function (e) {
-			terminalcommand("run check-stockinfo.js");
+			terminalcommand("run " + settings.primary.info);
 		});
 		output.appendChild(stockinfobtn);
 		

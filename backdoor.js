@@ -1,4 +1,5 @@
 /** @param {NS} ns */
+// called from scanhosts
 export async function main(ns) {
 	//ns.tprint(ns.args[0]);
 	var trace = ns.args[0].split(";connect ");

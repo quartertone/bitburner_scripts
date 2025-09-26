@@ -61,7 +61,7 @@ export async function main(ns) {
 	}
 
 	// FOR EACH SERVER/HOST
-	//find server list; use scanhost.js and exec this script
+	//find server list; use scanhost and exec this script
 	//var serverlist = ["list", "of", "servers"];
 
 	// check to make sure we have enough ram to do all this
@@ -90,7 +90,7 @@ export async function main(ns) {
 
 	let copied = false;
 	for (const server of serverlist) {
-		copied = await ns.scp("settings.js", server, "home");
+		copied = await ns.scp(settings.settingsfile, server, "home");
 		for (const script in settings.batch) {
 			copied = await ns.scp(settings.batch[script], server, "home");
 			// TODO low priority - consolidate to ONE scp event (use file name array)

@@ -4,7 +4,7 @@
 /** @param {NS} ns **/
 //SOLID
 
-// moved to settings.js
+// moved to settings
 /*
 export var settings = {
 	volthresh: 0.05, // max allowable volatility
@@ -25,7 +25,7 @@ export async function main(ns) {
 	var minbuy = settings.minbuy; // minimum purchase
 
 	// existence of file indicates the "on" status of this script
-	var runfile = "runfile-" + ns.getScriptName() + ".txt";
+	var runfile = settings.tixrunfile; //"runfile-" + ns.getScriptName() + ".txt";
 
 	ns.disableLog('disableLog');
 	ns.disableLog('sleep');
@@ -119,8 +119,8 @@ export async function main(ns) {
 			//ns.print('Cycle Complete');
 			await ns.sleep(2000);
 
-			if (!ns.scriptRunning("check-moneystocks.js", "home")) {
-				ns.exec("check-moneystocks.js", "home", 1);
+			if (!ns.scriptRunning(settings.tix.tracker, "home")) {
+				ns.exec(settings.tix.tracker, "home", 1);
 			}
 
 		}

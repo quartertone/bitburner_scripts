@@ -1,6 +1,6 @@
 /** @param {NS} ns **/
 
-import { terminalcommand, panelbox, getservers } from "settings.js";
+import { terminalcommand, panelbox, getservers,settings } from "settings.js";
 
 export async function main(ns) {
 	/*
@@ -44,8 +44,8 @@ start/stop buy servers | 2^N RAM
 	serverinfobtn.innerHTML = "S-info";
 	serverinfobtn.addEventListener("click", function (e) {
 		//ns.print(
-		//	'ns.exec("check-getinfo.js", "home", 1, "' + serverselect.value + '");'
-		terminalcommand("run check-getinfo.js " + serverselect.value);
+		//	'ns.exec("check-getinfo.j s", "home", 1, "' + serverselect.value + '");'
+		terminalcommand("run " + settings.serverinfo + " " + serverselect.value);
 		//);
 	});
 	controlbox.appendChild(serverinfobtn);
@@ -70,7 +70,7 @@ start/stop buy servers | 2^N RAM
 	var stockinfobtn = document.createElement("button");
 	stockinfobtn.innerHTML = "Stocks info(t)";
 	stockinfobtn.addEventListener("click", function (e) {
-		terminalcommand("run check-stockinfo.js");
+		terminalcommand("run " + settings.tix.info);
 	});
 	controlbox.appendChild(stockinfobtn);
 
@@ -78,7 +78,7 @@ start/stop buy servers | 2^N RAM
 	var stockmoney = document.createElement("button");
 	stockmoney.innerHTML = "Stock tracker";
 	stockmoney.addEventListener("click", function (e) {
-		terminalcommand("run check-moneystocks.js");
+		terminalcommand("run check-moneystocks.j s");
 	});
 	controlbox.appendChild(stockmoney);
 */

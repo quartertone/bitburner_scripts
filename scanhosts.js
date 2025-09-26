@@ -236,7 +236,7 @@ export async function main(ns) {
 				if (bakdoorcmd && ns.getHackingLevel() > serverhacklevel
 					&& backdoorservers.includes(server)
 					&& noroot == "*") {
-					ns.exec("backdoor.js", "home", 1, trace + "connect " + server);
+					ns.exec(settings.backdoor, "home", 1, trace + "connect " + server);
 				}
 			}
 

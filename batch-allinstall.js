@@ -8,7 +8,7 @@ export async function main(ns) {
 		[target]		Target for hacking scripts\n\
 		[-s server]		Single server on which to install batch scripts\n";
 
-	// NEED TO buy-servers.js FIRST
+	// NEED TO buy-servers FIRST
 	// TODO - modify so that /home server is used as controller site
 
 	var exclude = "";
@@ -42,7 +42,7 @@ export async function main(ns) {
 
 
 	// FOR EACH SERVER/HOST
-	//find server list; use scanhost.js and exec this script
+	//find server list; use scanhost and exec this script
 	//var serverlist = ["list", "of", "servers"];
 
 	// check to make sure we have enough ram to do all this
@@ -81,7 +81,7 @@ export async function main(ns) {
 		// include-only filter
 		if (includeonly && !server.match(includeonly)) continue;
 
-		copied = await ns.scp("settings.js", server, "home");
+		copied = await ns.scp(settings.settingsfile, server, "home");
 		for (const script in settings.batch) {
 			copied = await ns.scp(settings.batch[script], server, "home");
 			// TODO low priority - consolidate to ONE scp event (use file name array)

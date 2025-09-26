@@ -1,5 +1,5 @@
 /** @param {NS} ns **/
-
+// VERY FIRST script to run; root first degree servers
 import { rootprep } from "settings.js";
 export async function main(ns) {
 	let servers = ns.scan(ns.args[0]);

@@ -1,4 +1,6 @@
 /** @param {NS} ns */
+
+import { settings } from "/settings.js";
 export async function main(ns) {
 
 	// parse command line arguments
@@ -39,12 +41,12 @@ export async function main(ns) {
 			switch (clonetask) {
 				case "class":
 					ns.tprint("take class" + ", " + i + ", " + clone.location +":"+ clone.className);
-					ns.run("sleeve-actions-class.js", 1, i, clone.location +":"+ clone.className);
+					ns.run(settings.sleeve.class, 1, i, clone.location +":"+ clone.className);
 					//ns.sleeve.setToUniversityCourse(i, clone.location, clone.className);
 					break;
 				case "crime":
 					ns.tprint("do crime" + ", " +i, + ", " +clone.crime);
-					ns.run("sleeve-actions-crime.js", 1, i ,clone.crime);
+					ns.run(settings.sleeve.crime, 1, i ,clone.crime);
 					//ns.sleeve.setToCommitCrime(i, clone.crime);
 					break;
 				case "faction":
@@ -52,24 +54,24 @@ export async function main(ns) {
 					//	ns.sleeve.setToFactionWork(i, clone.location, clone.factionWorkType);
 					break
 				case "bladeburner":
-				//	ns.run("sleeve-actions-bladeburner.js", 1, i ,clone.crime);
+				//	ns.run(settings.sleeve.bladeburner, 1, i ,clone.crime);
 					break;
 				case "company":
 					ns.tprint("company work");
-					ns.run("sleeve-actions-company.js", 1, i , clone.location);
+					ns.run(settings.sleeve.company, 1, i , clone.location);
 					//ns.sleeve.setToCompanyWork(i, clone.location);
 					break;
 				case "gym":
 					ns.tprint("work out");
-					ns.run("sleeve-actions-gym.js", 1, i , clone.location + ":"+  clone.gymStatType);
+					ns.run(settings.sleeve.gym, 1, i , clone.location + ":"+  clone.gymStatType);
 					// ns.sleeve.setToGymWorkout(i, clone.location, gymStatType);
 					break;
 				case "Synchro":
-					ns.run("sleeve-actions-synchro.js", 1, i);
+					ns.run(settings.sleeve.synchro, 1, i);
 					//ns.sleeve.setToSynchronize(i);
 					break;
 				case "Recovery":
-					ns.run("sleeve-actions-recovery.js", 1, i);
+					ns.run(settings.sleeve.recovery, 1, i);
 					//ns.sleeve.setToShockRecovery(i);
 					break;
 			}
